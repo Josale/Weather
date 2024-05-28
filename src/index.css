@@ -1,0 +1,102 @@
+body {
+  font-family: 'Nunito', Arial, sans-serif;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,113,153,1) 0%, rgba(19,68,107,1) 18%, rgba(21,56,94,1) 32%, rgba(20,38,62,1) 62%, rgba(20,32,51,1) 100%, rgba(20,24,37,1) 100%, rgba(12,124,165,1) 100%, rgba(8,156,197,1) 100%, rgba(5,176,217,1) 100%, rgba(0,212,255,1) 100%, rgba(42,119,157,1) 100%);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  margin-top: 230px; 
+  
+}
+
+.search-bar {
+  display: flex;
+  width: 350px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.search-bar input {
+  padding: 10px 40px 10px 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-bar button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: url(./icon/search.svg) no-repeat center center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  background: transparent;
+  margin-right: 20px;
+  &:hover {
+      cursor: pointer;
+      background-color: hsl(240, 33%, 13%);
+      opacity: 90%;
+      transition: 0.3s;
+  }
+}
+
+.weather-card-second {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  background: transparent;
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(240, 33%, 13%);
+    opacity: 90%;
+    transition: 0.3s;
+  }
+}
+
+.weather-card-image {
+  width: 300px;
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  color: #fff;
+}
+
+.temperature {
+  color: #fff;
+}
+
+.wrapper-card {
+  display: flex;
+  margin-top: 75px;
+}
+
+p {
+  color: white;
+}
