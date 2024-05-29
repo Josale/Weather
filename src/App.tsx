@@ -1,47 +1,58 @@
 import axios from 'axios'
 import { useState } from 'react'
-import ErrorComponents from './components/ErrorComponents'
+
+import { Weather } from './types/weather.type'
+
 import SearchBar from './components/SearchBar'
 import WeatherCard from './components/WeatherCard'
 
-const API_KEY = 'F4A4xWkLqg6YAf4Te2W5Lqs1sWW3RKhJ'
-
-interface WeatherDataProps{
-  temperature: number;
-  city: string;
-  humidity: number;
-  windSpeed: number;
-}
+const URL = 'https://api.tomorrow.io/v4/weather/realtime';
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 function App() {
-
-  const [weatherData, setWeatherData] = useState<WeatherDataProps | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [weatherData, setWeatherData] = useState<Weather | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchWeather = async (city: string) => {
-    setLoading(true);
+    setIsLoading(true);
     setError(null);
+
     try {
-      const response = await axios.get(`https://api.tomorrow.io/v4/weather/realtime?location=${city}&apikey=${API_KEY}`);
+      const urlParams = `${URL}?location=${city}&apikey=${API_KEY}`;
+
+      const response = await axios.get(urlParams);
       const data = response.data;
-      console.log(location);
+
       setWeatherData(data);
-      console.log(data)
     } catch (err) {
       setError('City not found');
+    } finally {
+      setIsLoading(false);
     }
-    setLoading(false);
   };
-  console.log(weatherData)
-  return(
+
+  console.log();
+
+
+  return (
     <div className="app">
-      <SearchBar fetchWeather={fetchWeather}/>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {weatherData ? (<WeatherCard weather={weatherData} />) : (<ErrorComponents />)}
+      <SearchBar fetchWeather={fetchWeather} />
+
+      {isLoading && (
+        <div className='loader'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      )}
+      {error && <p className="error-toast">{error}</p>}
+
+      {weatherData && (
+        <WeatherCard weather={weatherData} />
+      )}
     </div>
   );
 }
 
-export default App
+export default App;

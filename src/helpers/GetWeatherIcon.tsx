@@ -1,9 +1,9 @@
 const getWeatherIcon = (code: number) => {
   switch (code) {
     case 1000 || 10000:
-      return '/images/sun.png'
+      return '/images/sun.png';
     case 10001:
-      return '/images/moon.png'
+      return '/images/moon.png';
     case 1100:
     case 1101:
     case 11000:
@@ -30,7 +30,7 @@ const getWeatherIcon = (code: number) => {
     case 21080:
     case 21081:
     case 21070:
-      return '/images/sun-cloud.png'
+      return '/images/sun-cloud.png';
     case 4201:
     case 42010:
     case 42011:
@@ -109,7 +109,7 @@ const getWeatherIcon = (code: number) => {
     case 7103:
     case 71030:
     case 71031:
-      return '/images/rain.png'
+      return '/images/rain.png';
     case 4000:
     case 40000:
     case 40001:
@@ -195,7 +195,7 @@ const getWeatherIcon = (code: number) => {
     case 7109:
     case 71090:
     case 71091:
-      return '/images/rain-small.png'
+      return '/images/rain-small.png';
     case 5001:
     case 50010:
     case 50011:
@@ -220,7 +220,7 @@ const getWeatherIcon = (code: number) => {
     case 5104:
     case 51040:
     case 51041:
-      return '/images/snow-cloud.png'
+      return '/images/snow-cloud.png';
     case 5000:
     case 50000:
     case 50001:
@@ -245,7 +245,7 @@ const getWeatherIcon = (code: number) => {
     case 5121:
     case 51210:
     case 51211:
-      return '/images/snow.png'
+      return '/images/snow.png';
     case 5110:
     case 51100:
     case 51101:
@@ -258,7 +258,7 @@ const getWeatherIcon = (code: number) => {
     case 5112:
     case 51120:
     case 51121:
-      return '/images/snow-rain.png'
+      return '/images/snow-rain.png';
     case 8000:
     case 80000:
     case 80001:
@@ -271,8 +271,8 @@ const getWeatherIcon = (code: number) => {
     case 8002:
     case 80020:
     case 80021:
-      return '/images/thunderstorm-rain.png'
+      return '/images/thunderstorm-rain.png';
   }
-}
+};
 
-export default getWeatherIcon
+export default getWeatherIcon;
