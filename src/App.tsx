@@ -20,7 +20,8 @@ function App() {
 
     try {
       const urlParams = `${URL}?location=${city}&apikey=${API_KEY}`;
-
+      console.log(urlParams)
+      
       const response = await axios.get(urlParams);
       const data = response.data;
 

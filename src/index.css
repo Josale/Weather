@@ -45,6 +45,8 @@ body {
   cursor: pointer;
 }
 
+/* weather card */
+
 .weather-card {
   display: flex;
   flex-direction: column;
